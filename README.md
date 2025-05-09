@@ -1,16 +1,11 @@
-<div align="center">
-Show Image
-Show Image
-Show Image
-Show Image
-Show Image
-Show Image
-</div>
+
 This repository contains Terraform code to deploy a production-ready Google Kubernetes Engine (GKE) cluster with a complete infrastructure setup including VPC networking, load balancing, and persistent storage.
 🏗️ Architecture
-Show Image
+![gke-architecture-diagram](https://github.com/user-attachments/assets/c04a4736-b836-4bc9-8d34-4229bb5b0c0c)
+
 The infrastructure is based on a modular design with the following components:
 ComponentDescriptionGKE ClusterConfigurable as either Standard or AutopilotControl PlaneWith API Server, Scheduler, and Resource ControllersNode PoolsConfigurable node pools for different workloadsVPC NetworkingDedicated VPC with subnets and secondary IP ranges for pods and servicesPersistent StorageStorage classes for SSD and standard persistent disksLoad BalancerGlobal HTTP/HTTPS load balancer with health checks and SSL support
+```hcl
 📂 Module Structure
 terraform-gke-infrastructure/
 ├── modules/
@@ -23,6 +18,7 @@ terraform-gke-infrastructure/
 │   ├── staging/        # Staging environment
 │   └── prod/           # Production environment
 └── .github/workflows/  # CI/CD configuration with GitHub Actions
+```
 ✅ Prerequisites
 
 Google Cloud Platform (GCP) account
