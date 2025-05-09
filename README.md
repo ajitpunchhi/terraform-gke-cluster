@@ -47,19 +47,22 @@ hclproject_id = "your-project-id"
 region     = "us-central1"
 zones      = ["us-central1-a", "us-central1-b", "us-central1-c"]
 
+```hcl
 # VPC Configuration
 vpc_name    = "gke-vpc"
 subnet_name = "gke-subnet"
 subnet_cidr = "10.0.0.0/20"
 pod_cidr    = "10.16.0.0/14"
 service_cidr = "10.20.0.0/20"
-
+```
+```hcl
 # GKE Configuration
 cluster_name = "gke-cluster"
 enable_autopilot = false
 private_cluster = true
 release_channel = "REGULAR"
-
+```
+```hcl
 # Node Pool Configuration
 node_pools = [
   {
@@ -79,6 +82,7 @@ node_pools = [
     taints             = []
   }
 ]
+```
 4. Initialize and Apply Terraform
 bash# Initialize Terraform
 terraform init
@@ -184,6 +188,7 @@ Set up the following GitHub repository secrets:
 GOOGLE_CREDENTIALS: The JSON content of your service account key
 GCP_PROJECT_ID: Your Google Cloud project ID
 
+```hcl
 📚 Module Documentation
 GKE Module
 hclmodule "gke" {
@@ -247,6 +252,7 @@ hclmodule "load_balancer" {
   host_rules        = var.host_rules
   path_matchers     = var.path_matchers
 }
+```
 🔍 Features
 
 Multi-environment Support: Deploy to dev, staging, and production environments with different configurations
